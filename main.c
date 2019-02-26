@@ -41,9 +41,6 @@ void main(void)
     while(1) 
     {
         LATAbits.LATA0=1;
-        __delay_ms(1000);
-        LATAbits.LATA0=0;
-        __delay_ms(1000);
     }
 
 }
