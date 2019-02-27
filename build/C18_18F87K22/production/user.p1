@@ -3,6 +3,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
 "2545
 [v _LATA `Vuc ~T0 @X0 0 e@3977 ]
+"2254
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"2645
+[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
 "5404
 [s S224 :4 `uc 1 :2 `uc 1 ]
 [n S224 . PCFG VCFG ]
@@ -19,6 +23,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADCON1bits `VS223 ~T0 @X0 0 e@4033 ]
 "2835
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"3033
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"6892
+[s S302 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S302 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"6900
+[s S303 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S303 . T0PS0 T0PS1 T0PS2 ]
+"6891
+[u S301 `S302 1 `S303 1 ]
+[n S301 . . . ]
+"6906
+[v _T0CONbits `VS301 ~T0 @X0 0 e@4053 ]
+"7405
+[s S315 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S315 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7415
+[s S316 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S316 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7425
+[s S317 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S317 . . GIEL GIEH ]
+"7404
+[u S314 `S315 1 `S316 1 `S317 1 ]
+[n S314 . . . . ]
+"7431
+[v _INTCONbits `VS314 ~T0 @X0 0 e@4082 ]
+"7328
+[s S311 :7 `uc 1 :1 `uc 1 ]
+[n S311 . . NOT_RBPU ]
+"7332
+[s S312 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S312 . RBIP . TMR0IP . INTEDG2 INTEDG1 INTEDG0 nRBPU ]
+"7342
+[s S313 :2 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S313 . . T0IP . RBPU ]
+"7327
+[u S310 `S311 1 `S312 1 `S313 1 ]
+[n S310 . . . . ]
+"7349
+[v _INTCON2bits `VS310 ~T0 @X0 0 e@4081 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -3168,13 +3213,55 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;user.c: 32: LATA=0x00;
 "32
 [e = _LATA -> -> 0 `i `uc ]
-[; ;user.c: 34: ADCON1bits.PCFG=0b1111;
+[; ;user.c: 33: PORTB=0x00;
+"33
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;user.c: 34: LATB=0x00;
 "34
-[e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
-[; ;user.c: 35: TRISA=0b0000000;
+[e = _LATB -> -> 0 `i `uc ]
+[; ;user.c: 35: ADCON1bits.PCFG=0b1111;
 "35
+[e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
+[; ;user.c: 36: TRISA=0b0000000;
+"36
 [e = _TRISA -> -> 0 `i `uc ]
-[; ;user.c: 41: }
+[; ;user.c: 37: TRISB=0b0000001;
+"37
+[e = _TRISB -> -> 1 `i `uc ]
+[; ;user.c: 39: T0CONbits.T08BIT=1;
+"39
+[e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 40: T0CONbits.T0CS=0;
+"40
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+[; ;user.c: 41: T0CONbits.PSA=0;
 "41
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+[; ;user.c: 42: T0CONbits.T0PS=0b111;
+"42
+[e = . . _T0CONbits 0 0 -> -> 7 `i `uc ]
+[; ;user.c: 50: INTCONbits.GIE=1;
+"50
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;user.c: 51: INTCONbits.INT0E=1;
+"51
+[e = . . _INTCONbits 1 4 -> -> 1 `i `uc ]
+[; ;user.c: 52: INTCONbits.TMR0IE=1;
+"52
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;user.c: 53: INTCON2bits.TMR0IP=1;
+"53
+[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
+[; ;user.c: 54: INTCON2bits.INTEDG0=1;
+"54
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;user.c: 55: INTCONbits.RBIE=1;
+"55
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+[; ;user.c: 56: INTCON2bits.RBIP=1;
+"56
+[e = . . _INTCON2bits 1 0 -> -> 1 `i `uc ]
+[; ;user.c: 57: }
+"57
 [e :UE 322 ]
 }

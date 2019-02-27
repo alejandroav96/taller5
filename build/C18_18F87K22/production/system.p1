@@ -3156,9 +3156,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;system.c: 27: OSCCONbits.SCS=0b10;
 "27
 [e = . . _OSCCONbits 0 0 -> -> 2 `i `uc ]
-[; ;system.c: 28: OSCCONbits.IRCF=0b111;
+[; ;system.c: 28: OSCCONbits.IRCF=0b110;
 "28
-[e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
+[e = . . _OSCCONbits 0 3 -> -> 6 `i `uc ]
 [; ;system.c: 32: }
 "32
 [e :UE 322 ]

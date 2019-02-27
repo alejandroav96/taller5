@@ -4365,7 +4365,13 @@ void ConfigureOscillator(void);
 # 13 "user.h"
 void InitApp(void);
 
-# 32 "main.c"
+# 26 "main.c"
+int count=0;
+int press=0;
+
+# 33
+int upDown=1;
+int i;
 void main(void)
 {
 
@@ -4377,10 +4383,26 @@ InitApp();
 
 while(1)
 {
-LATAbits.LATA0=1;
-_delay((unsigned long)((1000)*(8000000/4000.0)));
-LATAbits.LATA0=0;
-_delay((unsigned long)((1000)*(8000000/4000.0)));
+if(press) {
+press=0;
+if (upDown) {
+if(count>16){
+while(press==0) {
+LATAbits.LA0=1;
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+LATAbits.LA0=0;
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+LATAbits.LA0=1;
+}
+} else {
+LATAbits.LA0=1;
+}
+upDown=0;
+} else {
+LATAbits.LA0=0;
+upDown=1;
+}
+}
 }
 
 }

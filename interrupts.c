@@ -16,6 +16,8 @@
 #include <stdbool.h>        /* For true/false definition */
 
 #endif
+extern int count;
+extern int press;
 void interrupt high_isr(void);
 /******************************************************************************/
 /* Interrupt Routines                                                         */
@@ -39,13 +41,29 @@ void high_isr(void)
       conditional statements are not handled within 3 seperate if blocks.
       Do not use a seperate if block for each interrupt flag to avoid run
       time errors. */
+    if(INTCONbits.INT0IF==1 && INTCONbits.INT0IE==1) {   
+        INTCONbits.INT0IF=0; /* Clear Interrupt Flag 1 */
+        if(INTCON2bits.INTEDG0==1){
+            count=0;
+            T0CONbits.TMR0ON=1;
+            INTCON2bits.INTEDG0=0;
+        } else {
+            T0CONbits.TMR0ON=0;
+            INTCON2bits.INTEDG0=1;
+            press=1;
+        }
+        
+    } else if(INTCONbits.TMR0IF==1 && INTCONbits.TMR0IE==1) { 
+        INTCONbits.TMR0IF=0; /* Clear Interrupt Flag 1 */
+        count++;
+    }
 
 #if 0
     
       /* TODO Add High Priority interrupt routine code here. */
 
       /* Determine which flag generated the interrupt */
-      if(<Interrupt Flag 1>)
+      if(INTCONbits.INT0IF)
       {
           <Interrupt Flag 1=0>; /* Clear Interrupt Flag 1 */
       }

@@ -19,16 +19,19 @@
 
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 4000000
 /******************************************************************************/
 /* User Global Variable Declaration                                           */
 /******************************************************************************/
-
+int count=0;
+int press=0;
 /* i.e. uint8_t <variable_name>; */
 
 /******************************************************************************/
 /* Main Program                                                               */
 /******************************************************************************/
+int upDown=1;
+int i;
 void main(void) 
 {   
     /* Configure the oscillator for the device */
@@ -39,8 +42,27 @@ void main(void)
     
     /* TODO <INSERT USER APPLICATION CODE HERE> */
     while(1) 
-    {
-        LATAbits.LATA0=1;
+    {   
+        if(press) {
+            press=0;
+            if (upDown) {
+                if(count>16){
+                    while(press==0) {
+                        LATAbits.LA0=1;
+                        __delay_ms(1000);
+                        LATAbits.LA0=0;
+                        __delay_ms(1000);
+                        LATAbits.LA0=1;
+                    }
+                } else {
+                    LATAbits.LA0=1;
+                }
+                upDown=0;
+            } else {
+                LATAbits.LA0=0;
+                upDown=1;
+            }
+        }
     }
 
 }

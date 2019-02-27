@@ -1,4 +1,47 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"7405 /Applications/microchip/xc8/v1.45/include/pic18f2550.h
+[s S315 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S315 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7415
+[s S316 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S316 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7425
+[s S317 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S317 . . GIEL GIEH ]
+"7404
+[u S314 `S315 1 `S316 1 `S317 1 ]
+[n S314 . . . . ]
+"7431
+[v _INTCONbits `VS314 ~T0 @X0 0 e@4082 ]
+"7328
+[s S311 :7 `uc 1 :1 `uc 1 ]
+[n S311 . . NOT_RBPU ]
+"7332
+[s S312 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S312 . RBIP . TMR0IP . INTEDG2 INTEDG1 INTEDG0 nRBPU ]
+"7342
+[s S313 :2 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S313 . . T0IP . RBPU ]
+"7327
+[u S310 `S311 1 `S312 1 `S313 1 ]
+[n S310 . . . . ]
+"7349
+[v _INTCON2bits `VS310 ~T0 @X0 0 e@4081 ]
+"19 interrupts.c
+[v _count `i ~T0 @X0 0 e ]
+"6892 /Applications/microchip/xc8/v1.45/include/pic18f2550.h
+[s S302 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S302 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"6900
+[s S303 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S303 . T0PS0 T0PS1 T0PS2 ]
+"6891
+[u S301 `S302 1 `S303 1 ]
+[n S301 . . . ]
+"6906
+[v _T0CONbits `VS301 ~T0 @X0 0 e@4053 ]
+"20 interrupts.c
+[v _press `i ~T0 @X0 0 e ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -3133,32 +3176,91 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;interrupts.c: 19: void interrupt high_isr(void);
+[; ;interrupts.c: 19: extern int count;
+[; ;interrupts.c: 20: extern int press;
+[; ;interrupts.c: 21: void interrupt high_isr(void);
 [v $root$_high_isr `(v ~T0 @X0 0 e ]
-[v F3354 `(v ~T0 @X0 1 tf ]
-"27 interrupts.c
-[v _high_isr `IF3354 ~T0 @X0 1 e ]
-"36
+[v F3356 `(v ~T0 @X0 1 tf ]
+"29 interrupts.c
+[v _high_isr `IF3356 ~T0 @X0 1 e ]
+"38
 {
-[; ;interrupts.c: 27: void interrupt high_isr(void)
-[; ;interrupts.c: 36: {
+[; ;interrupts.c: 29: void interrupt high_isr(void)
+[; ;interrupts.c: 38: {
 [e :U _high_isr ]
 [f ]
-[; ;interrupts.c: 63: }
-"63
+[; ;interrupts.c: 44: if(INTCONbits.INT0IF==1 && INTCONbits.INT0IE==1) {
+"44
+[e $ ! && == -> . . _INTCONbits 0 1 `i -> 1 `i == -> . . _INTCONbits 0 4 `i -> 1 `i 323  ]
+{
+[; ;interrupts.c: 45: INTCONbits.INT0IF=0;
+"45
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;interrupts.c: 46: if(INTCON2bits.INTEDG0==1){
+"46
+[e $ ! == -> . . _INTCON2bits 1 6 `i -> 1 `i 324  ]
+{
+[; ;interrupts.c: 47: count=0;
+"47
+[e = _count -> 0 `i ]
+[; ;interrupts.c: 48: T0CONbits.TMR0ON=1;
+"48
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;interrupts.c: 49: INTCON2bits.INTEDG0=0;
+"49
+[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
+"50
+}
+[; ;interrupts.c: 50: } else {
+[e $U 325  ]
+[e :U 324 ]
+{
+[; ;interrupts.c: 51: T0CONbits.TMR0ON=0;
+"51
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+[; ;interrupts.c: 52: INTCON2bits.INTEDG0=1;
+"52
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;interrupts.c: 53: press=1;
+"53
+[e = _press -> 1 `i ]
+"54
+}
+[e :U 325 ]
+"56
+}
+[; ;interrupts.c: 54: }
+[; ;interrupts.c: 56: } else if(INTCONbits.TMR0IF==1 && INTCONbits.TMR0IE==1) {
+[e $U 326  ]
+[e :U 323 ]
+[e $ ! && == -> . . _INTCONbits 0 2 `i -> 1 `i == -> . . _INTCONbits 0 5 `i -> 1 `i 327  ]
+{
+[; ;interrupts.c: 57: INTCONbits.TMR0IF=0;
+"57
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;interrupts.c: 58: count++;
+"58
+[e ++ _count -> 1 `i ]
+"59
+}
+[e :U 327 ]
+"81
+[e :U 326 ]
+[; ;interrupts.c: 59: }
+[; ;interrupts.c: 81: }
 [e :UE 322 ]
 }
 [v $root$_low_isr `(v ~T0 @X0 0 e ]
-[v F3359 `(v ~T0 @X0 1 tf ]
-"67
-[v _low_isr `ILF3359 ~T0 @X0 1 e ]
-"75
+[v F3361 `(v ~T0 @X0 1 tf ]
+"85
+[v _low_isr `ILF3361 ~T0 @X0 1 e ]
+"93
 {
-[; ;interrupts.c: 67: void low_priority interrupt low_isr(void)
-[; ;interrupts.c: 75: {
+[; ;interrupts.c: 85: void low_priority interrupt low_isr(void)
+[; ;interrupts.c: 93: {
 [e :U _low_isr ]
 [f ]
-[; ;interrupts.c: 102: }
-"102
-[e :UE 323 ]
+[; ;interrupts.c: 120: }
+"120
+[e :UE 328 ]
 }
