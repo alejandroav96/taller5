@@ -36,6 +36,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S301 . . . ]
 "6906
 [v _T0CONbits `VS301 ~T0 @X0 0 e@4053 ]
+"6023
+[s S256 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S256 . T2CKPS TMR2ON TOUTPS ]
+"6028
+[s S257 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S257 . T2CKPS0 T2CKPS1 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 ]
+"6037
+[s S258 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S258 . . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
+"6022
+[u S255 `S256 1 `S257 1 `S258 1 ]
+[n S255 . . . . ]
+"6045
+[v _T2CONbits `VS255 ~T0 @X0 0 e@4042 ]
+"6115
+[v _PR2 `Vuc ~T0 @X0 0 e@4043 ]
+"5228
+[v _CCPR2L `Vuc ~T0 @X0 0 e@4027 ]
+"5163
+[s S215 :4 `uc 1 :2 `uc 1 ]
+[n S215 . CCP2M DC2B ]
+"5167
+[s S216 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S216 . CCP2M0 CCP2M1 CCP2M2 CCP2M3 DC2B0 DC2B1 ]
+"5162
+[u S214 `S215 1 `S216 1 ]
+[n S214 . . . ]
+"5176
+[v _CCP2CONbits `VS214 ~T0 @X0 0 e@4026 ]
 "7405
 [s S315 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S315 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
@@ -64,6 +93,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S310 . . . . ]
 "7349
 [v _INTCON2bits `VS310 ~T0 @X0 0 e@4081 ]
+"7236
+[s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S308 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
+"7246
+[s S309 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S309 . INT1F INT2F . INT1E INT2E . INT1P INT2P ]
+"7235
+[u S307 `S308 1 `S309 1 ]
+[n S307 . . . ]
+"7257
+[v _INTCON3bits `VS307 ~T0 @X0 0 e@4080 ]
+"27 user.c
+[v _press `i ~T0 @X0 0 e ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -3199,6 +3241,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;user.h: 13: void InitApp(void);
+[; ;user.h: 14: void pwm(int cycle);
+[; ;user.c: 27: extern int press;
 "28 user.c
 [v _InitApp `(v ~T0 @X0 1 ef ]
 "29
@@ -3225,9 +3269,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;user.c: 36: TRISA=0b0000000;
 "36
 [e = _TRISA -> -> 0 `i `uc ]
-[; ;user.c: 37: TRISB=0b0000001;
+[; ;user.c: 37: TRISB=0b0000011;
 "37
-[e = _TRISB -> -> 1 `i `uc ]
+[e = _TRISB -> -> 3 `i `uc ]
 [; ;user.c: 39: T0CONbits.T08BIT=1;
 "39
 [e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
@@ -3240,28 +3284,128 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;user.c: 42: T0CONbits.T0PS=0b111;
 "42
 [e = . . _T0CONbits 0 0 -> -> 7 `i `uc ]
-[; ;user.c: 50: INTCONbits.GIE=1;
+[; ;user.c: 44: T2CONbits.T2CKPS=0b10;
+"44
+[e = . . _T2CONbits 0 0 -> -> 2 `i `uc ]
+[; ;user.c: 45: T2CONbits.TMR2ON=1;
+"45
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+[; ;user.c: 47: PR2 = 255;
+"47
+[e = _PR2 -> -> 255 `i `uc ]
+[; ;user.c: 48: CCPR2L = 127;
+"48
+[e = _CCPR2L -> -> 127 `i `uc ]
+[; ;user.c: 49: CCP2CONbits.DC2B=0b11;
+"49
+[e = . . _CCP2CONbits 0 1 -> -> 3 `i `uc ]
+[; ;user.c: 50: CCP2CONbits.CCP2M=0b1100;
 "50
+[e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
+[; ;user.c: 59: INTCONbits.GIE=1;
+"59
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;user.c: 51: INTCONbits.INT0E=1;
-"51
+[; ;user.c: 60: INTCONbits.INT0E=1;
+"60
 [e = . . _INTCONbits 1 4 -> -> 1 `i `uc ]
-[; ;user.c: 52: INTCONbits.TMR0IE=1;
-"52
+[; ;user.c: 61: INTCONbits.TMR0IE=1;
+"61
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;user.c: 53: INTCON2bits.TMR0IP=1;
-"53
+[; ;user.c: 62: INTCON2bits.TMR0IP=1;
+"62
 [e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
-[; ;user.c: 54: INTCON2bits.INTEDG0=1;
-"54
+[; ;user.c: 63: INTCON2bits.INTEDG0=1;
+"63
 [e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
-[; ;user.c: 55: INTCONbits.RBIE=1;
-"55
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;user.c: 56: INTCON2bits.RBIP=1;
-"56
-[e = . . _INTCON2bits 1 0 -> -> 1 `i `uc ]
-[; ;user.c: 57: }
-"57
+[; ;user.c: 64: INTCON2bits.INTEDG1=0;
+"64
+[e = . . _INTCON2bits 1 5 -> -> 0 `i `uc ]
+[; ;user.c: 65: INTCON3bits.INT1IE=1;
+"65
+[e = . . _INTCON3bits 0 3 -> -> 1 `i `uc ]
+[; ;user.c: 66: INTCON3bits.INT1IP=1;
+"66
+[e = . . _INTCON3bits 0 6 -> -> 1 `i `uc ]
+[; ;user.c: 68: }
+"68
 [e :UE 322 ]
+}
+"69
+[v _pwm `(v ~T0 @X0 1 ef1`i ]
+{
+[; ;user.c: 69: void pwm(int cycle){
+[e :U _pwm ]
+[v _cycle `i ~T0 @X0 1 r1 ]
+[f ]
+[; ;user.c: 70: if (cycle==1) {
+"70
+[e $ ! == _cycle -> 1 `i 324  ]
+{
+[; ;user.c: 71: if (CCPR2L!=0) {
+"71
+[e $ ! != -> _CCPR2L `i -> 0 `i 325  ]
+{
+[; ;user.c: 72: CCPR2L = CCPR2L-1;
+"72
+[e = _CCPR2L -> - -> _CCPR2L `i -> 1 `i `uc ]
+"73
+}
+[; ;user.c: 73: } else {
+[e $U 326  ]
+[e :U 325 ]
+{
+[; ;user.c: 74: T0CONbits.TMR0ON=0;
+"74
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+[; ;user.c: 75: INTCON2bits.INTEDG0=1;
+"75
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;user.c: 76: press=1;
+"76
+[e = _press -> 1 `i ]
+"77
+}
+[e :U 326 ]
+"78
+}
+[; ;user.c: 77: }
+[; ;user.c: 78: } else if (cycle==2) {
+[e $U 327  ]
+[e :U 324 ]
+[e $ ! == _cycle -> 2 `i 328  ]
+{
+[; ;user.c: 79: if (CCPR2L!=255) {
+"79
+[e $ ! != -> _CCPR2L `i -> 255 `i 329  ]
+{
+[; ;user.c: 80: CCPR2L = CCPR2L+1;
+"80
+[e = _CCPR2L -> + -> _CCPR2L `i -> 1 `i `uc ]
+"81
+}
+[; ;user.c: 81: } else {
+[e $U 330  ]
+[e :U 329 ]
+{
+[; ;user.c: 82: T0CONbits.TMR0ON=0;
+"82
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+[; ;user.c: 83: INTCON2bits.INTEDG0=1;
+"83
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;user.c: 84: press=1;
+"84
+[e = _press -> 1 `i ]
+"85
+}
+[e :U 330 ]
+"86
+}
+[e :U 328 ]
+"87
+[e :U 327 ]
+[; ;user.c: 85: }
+[; ;user.c: 86: }
+[; ;user.c: 87: }
+[e :UE 323 ]
 }

@@ -4364,6 +4364,7 @@ void ConfigureOscillator(void);
 
 # 13 "user.h"
 void InitApp(void);
+void pwm(int cycle);
 
 # 26 "main.c"
 int count=0;
@@ -4386,21 +4387,21 @@ while(1)
 if(press) {
 press=0;
 if (upDown) {
-if(count>16){
+if(count>8){
 while(press==0) {
-LATAbits.LA0=1;
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-LATAbits.LA0=0;
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-LATAbits.LA0=1;
+pwm(2);
+_delay((unsigned long)((20)*(2000000/4000.0)));
 }
 } else {
-LATAbits.LA0=1;
+while(press==0) {
+pwm(1);
+_delay((unsigned long)((20)*(2000000/4000.0)));
+}
 }
 upDown=0;
 } else {
-LATAbits.LA0=0;
 upDown=1;
+pwm(0);
 }
 }
 }

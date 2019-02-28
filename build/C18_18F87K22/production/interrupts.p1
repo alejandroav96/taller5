@@ -42,6 +42,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _T0CONbits `VS301 ~T0 @X0 0 e@4053 ]
 "20 interrupts.c
 [v _press `i ~T0 @X0 0 e ]
+"7236 /Applications/microchip/xc8/v1.45/include/pic18f2550.h
+[s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S308 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
+"7246
+[s S309 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S309 . INT1F INT2F . INT1E INT2E . INT1P INT2P ]
+"7235
+[u S307 `S308 1 `S309 1 ]
+[n S307 . . . ]
+"7257
+[v _INTCON3bits `VS307 ~T0 @X0 0 e@4080 ]
+"6225
+[v _TMR2 `Vuc ~T0 @X0 0 e@4044 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -3189,9 +3202,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;interrupts.c: 38: {
 [e :U _high_isr ]
 [f ]
-[; ;interrupts.c: 44: if(INTCONbits.INT0IF==1 && INTCONbits.INT0IE==1) {
+[; ;interrupts.c: 44: if(INTCONbits.INT0IF) {
 "44
-[e $ ! && == -> . . _INTCONbits 0 1 `i -> 1 `i == -> . . _INTCONbits 0 4 `i -> 1 `i 323  ]
+[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 323  ]
 {
 [; ;interrupts.c: 45: INTCONbits.INT0IF=0;
 "45
@@ -3230,10 +3243,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "56
 }
 [; ;interrupts.c: 54: }
-[; ;interrupts.c: 56: } else if(INTCONbits.TMR0IF==1 && INTCONbits.TMR0IE==1) {
+[; ;interrupts.c: 56: } else if(INTCONbits.TMR0IF) {
 [e $U 326  ]
 [e :U 323 ]
-[e $ ! && == -> . . _INTCONbits 0 2 `i -> 1 `i == -> . . _INTCONbits 0 5 `i -> 1 `i 327  ]
+[e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 327  ]
 {
 [; ;interrupts.c: 57: INTCONbits.TMR0IF=0;
 "57
@@ -3243,24 +3256,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _count -> 1 `i ]
 "59
 }
+[; ;interrupts.c: 59: } else if(INTCON3bits.INT1IF) {
+[e $U 328  ]
 [e :U 327 ]
-"81
+[e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 329  ]
+{
+[; ;interrupts.c: 60: INTCON3bits.INT1IF=0;
+"60
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+[; ;interrupts.c: 61: TMR2=0;
+"61
+[e = _TMR2 -> -> 0 `i `uc ]
+"62
+}
+[e :U 329 ]
+"84
+[e :U 328 ]
 [e :U 326 ]
-[; ;interrupts.c: 59: }
-[; ;interrupts.c: 81: }
+[; ;interrupts.c: 62: }
+[; ;interrupts.c: 84: }
 [e :UE 322 ]
 }
 [v $root$_low_isr `(v ~T0 @X0 0 e ]
 [v F3361 `(v ~T0 @X0 1 tf ]
-"85
+"88
 [v _low_isr `ILF3361 ~T0 @X0 1 e ]
-"93
+"96
 {
-[; ;interrupts.c: 85: void low_priority interrupt low_isr(void)
-[; ;interrupts.c: 93: {
+[; ;interrupts.c: 88: void low_priority interrupt low_isr(void)
+[; ;interrupts.c: 96: {
 [e :U _low_isr ]
 [f ]
-[; ;interrupts.c: 120: }
-"120
-[e :UE 328 ]
+[; ;interrupts.c: 123: }
+"123
+[e :UE 330 ]
 }

@@ -41,7 +41,7 @@ void high_isr(void)
       conditional statements are not handled within 3 seperate if blocks.
       Do not use a seperate if block for each interrupt flag to avoid run
       time errors. */
-    if(INTCONbits.INT0IF==1 && INTCONbits.INT0IE==1) {   
+    if(INTCONbits.INT0IF) {   
         INTCONbits.INT0IF=0; /* Clear Interrupt Flag 1 */
         if(INTCON2bits.INTEDG0==1){
             count=0;
@@ -53,9 +53,12 @@ void high_isr(void)
             press=1;
         }
         
-    } else if(INTCONbits.TMR0IF==1 && INTCONbits.TMR0IE==1) { 
+    } else if(INTCONbits.TMR0IF) { 
         INTCONbits.TMR0IF=0; /* Clear Interrupt Flag 1 */
         count++;
+    } else if(INTCON3bits.INT1IF) { 
+        INTCON3bits.INT1IF=0; /* Clear Interrupt Flag 1 */
+        TMR2=0;   
     }
 
 #if 0

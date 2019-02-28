@@ -19,7 +19,7 @@
 
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 2000000
 /******************************************************************************/
 /* User Global Variable Declaration                                           */
 /******************************************************************************/
@@ -46,21 +46,21 @@ void main(void)
         if(press) {
             press=0;
             if (upDown) {
-                if(count>16){
+                if(count>8){
                     while(press==0) {
-                        LATAbits.LA0=1;
-                        __delay_ms(1000);
-                        LATAbits.LA0=0;
-                        __delay_ms(1000);
-                        LATAbits.LA0=1;
+                        pwm(2);
+                        __delay_ms(20);
                     }
                 } else {
-                    LATAbits.LA0=1;
+                    while(press==0) {
+                        pwm(1);
+                        __delay_ms(20);
+                    }
                 }
                 upDown=0;
             } else {
-                LATAbits.LA0=0;
                 upDown=1;
+                pwm(0);
             }
         }
     }
