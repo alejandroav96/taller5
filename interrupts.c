@@ -1,6 +1,7 @@
 /******************************************************************************/
 /*Files to Include                                                            */
 /******************************************************************************/
+#define _XTAL_FREQ 2000000
 
 #if defined(__XC)
     #include <xc.h>         /* XC8 General Include File */
@@ -41,7 +42,7 @@ void high_isr(void)
       conditional statements are not handled within 3 seperate if blocks.
       Do not use a seperate if block for each interrupt flag to avoid run
       time errors. */
-    if(INTCONbits.INT0IF) {   
+    if(INTCONbits.INT0IF) {
         INTCONbits.INT0IF=0; /* Clear Interrupt Flag 1 */
         if(INTCON2bits.INTEDG0==1){
             count=0;

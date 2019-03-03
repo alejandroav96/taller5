@@ -46,7 +46,7 @@ void InitApp(void)
     /* PWM */
     PR2 = 255;
     CCPR2L = 127;
-    CCP2CONbits.DC2B=0b11;
+    CCP2CONbits.DC2B=0b00;
     CCP2CONbits.CCP2M=0b1100;
     
     /* Setup analog functionality and port direction */
@@ -78,6 +78,7 @@ void pwm(int cycle){
     } else if (cycle==2) {
         if (CCPR2L!=255) {
             CCPR2L = CCPR2L+1;
+     
         } else {
             T0CONbits.TMR0ON=0;
             INTCON2bits.INTEDG0=1;

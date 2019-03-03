@@ -27,7 +27,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S310 . . . . ]
 "7349
 [v _INTCON2bits `VS310 ~T0 @X0 0 e@4081 ]
-"19 interrupts.c
+"20 interrupts.c
 [v _count `i ~T0 @X0 0 e ]
 "6892 /Applications/microchip/xc8/v1.45/include/pic18f2550.h
 [s S302 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -40,7 +40,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S301 . . . ]
 "6906
 [v _T0CONbits `VS301 ~T0 @X0 0 e@4053 ]
-"20 interrupts.c
+"21 interrupts.c
 [v _press `i ~T0 @X0 0 e ]
 "7236 /Applications/microchip/xc8/v1.45/include/pic18f2550.h
 [s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -3189,105 +3189,105 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;interrupts.c: 19: extern int count;
-[; ;interrupts.c: 20: extern int press;
-[; ;interrupts.c: 21: void interrupt high_isr(void);
+[; ;interrupts.c: 20: extern int count;
+[; ;interrupts.c: 21: extern int press;
+[; ;interrupts.c: 22: void interrupt high_isr(void);
 [v $root$_high_isr `(v ~T0 @X0 0 e ]
 [v F3356 `(v ~T0 @X0 1 tf ]
-"29 interrupts.c
+"30 interrupts.c
 [v _high_isr `IF3356 ~T0 @X0 1 e ]
-"38
+"39
 {
-[; ;interrupts.c: 29: void interrupt high_isr(void)
-[; ;interrupts.c: 38: {
+[; ;interrupts.c: 30: void interrupt high_isr(void)
+[; ;interrupts.c: 39: {
 [e :U _high_isr ]
 [f ]
-[; ;interrupts.c: 44: if(INTCONbits.INT0IF) {
-"44
+[; ;interrupts.c: 45: if(INTCONbits.INT0IF) {
+"45
 [e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 323  ]
 {
-[; ;interrupts.c: 45: INTCONbits.INT0IF=0;
-"45
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;interrupts.c: 46: if(INTCON2bits.INTEDG0==1){
+[; ;interrupts.c: 46: INTCONbits.INT0IF=0;
 "46
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;interrupts.c: 47: if(INTCON2bits.INTEDG0==1){
+"47
 [e $ ! == -> . . _INTCON2bits 1 6 `i -> 1 `i 324  ]
 {
-[; ;interrupts.c: 47: count=0;
-"47
-[e = _count -> 0 `i ]
-[; ;interrupts.c: 48: T0CONbits.TMR0ON=1;
+[; ;interrupts.c: 48: count=0;
 "48
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;interrupts.c: 49: INTCON2bits.INTEDG0=0;
+[e = _count -> 0 `i ]
+[; ;interrupts.c: 49: T0CONbits.TMR0ON=1;
 "49
-[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;interrupts.c: 50: INTCON2bits.INTEDG0=0;
 "50
+[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
+"51
 }
-[; ;interrupts.c: 50: } else {
+[; ;interrupts.c: 51: } else {
 [e $U 325  ]
 [e :U 324 ]
 {
-[; ;interrupts.c: 51: T0CONbits.TMR0ON=0;
-"51
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-[; ;interrupts.c: 52: INTCON2bits.INTEDG0=1;
+[; ;interrupts.c: 52: T0CONbits.TMR0ON=0;
 "52
-[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
-[; ;interrupts.c: 53: press=1;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+[; ;interrupts.c: 53: INTCON2bits.INTEDG0=1;
 "53
-[e = _press -> 1 `i ]
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;interrupts.c: 54: press=1;
 "54
+[e = _press -> 1 `i ]
+"55
 }
 [e :U 325 ]
-"56
+"57
 }
-[; ;interrupts.c: 54: }
-[; ;interrupts.c: 56: } else if(INTCONbits.TMR0IF) {
+[; ;interrupts.c: 55: }
+[; ;interrupts.c: 57: } else if(INTCONbits.TMR0IF) {
 [e $U 326  ]
 [e :U 323 ]
 [e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 327  ]
 {
-[; ;interrupts.c: 57: INTCONbits.TMR0IF=0;
-"57
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;interrupts.c: 58: count++;
+[; ;interrupts.c: 58: INTCONbits.TMR0IF=0;
 "58
-[e ++ _count -> 1 `i ]
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;interrupts.c: 59: count++;
 "59
+[e ++ _count -> 1 `i ]
+"60
 }
-[; ;interrupts.c: 59: } else if(INTCON3bits.INT1IF) {
+[; ;interrupts.c: 60: } else if(INTCON3bits.INT1IF) {
 [e $U 328  ]
 [e :U 327 ]
 [e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 329  ]
 {
-[; ;interrupts.c: 60: INTCON3bits.INT1IF=0;
-"60
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-[; ;interrupts.c: 61: TMR2=0;
+[; ;interrupts.c: 61: INTCON3bits.INT1IF=0;
 "61
-[e = _TMR2 -> -> 0 `i `uc ]
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+[; ;interrupts.c: 62: TMR2=0;
 "62
+[e = _TMR2 -> -> 0 `i `uc ]
+"63
 }
 [e :U 329 ]
-"84
+"85
 [e :U 328 ]
 [e :U 326 ]
-[; ;interrupts.c: 62: }
-[; ;interrupts.c: 84: }
+[; ;interrupts.c: 63: }
+[; ;interrupts.c: 85: }
 [e :UE 322 ]
 }
 [v $root$_low_isr `(v ~T0 @X0 0 e ]
 [v F3361 `(v ~T0 @X0 1 tf ]
-"88
+"89
 [v _low_isr `ILF3361 ~T0 @X0 1 e ]
-"96
+"97
 {
-[; ;interrupts.c: 88: void low_priority interrupt low_isr(void)
-[; ;interrupts.c: 96: {
+[; ;interrupts.c: 89: void low_priority interrupt low_isr(void)
+[; ;interrupts.c: 97: {
 [e :U _low_isr ]
 [f ]
-[; ;interrupts.c: 123: }
-"123
+[; ;interrupts.c: 124: }
+"124
 [e :UE 330 ]
 }

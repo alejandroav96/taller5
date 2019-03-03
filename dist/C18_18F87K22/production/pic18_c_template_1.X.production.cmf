@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcSNp3blX.obj
+$/tmp/xcC0H9hhx.obj
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 C6 C6 4 1
 reset_vec CODE 0 0 0 4 1
@@ -72,31 +72,31 @@ MEDIUMCONST 800-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
-18 intcodelo CODE >88:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+18 intcodelo CODE >89:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
 18 intcodelo CODE >32:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/system.c
-6E intcodelo CODE >123:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-8 intcode CODE >29:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-8 intcode CODE >123:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-CA intcode_body CODE >29:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-114 intcode_body CODE >44:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-122 intcode_body CODE >45:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-124 intcode_body CODE >46:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-132 intcode_body CODE >47:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-13A intcode_body CODE >48:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-13C intcode_body CODE >49:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-13E intcode_body CODE >50:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-142 intcode_body CODE >51:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-144 intcode_body CODE >52:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-146 intcode_body CODE >53:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-152 intcode_body CODE >54:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-152 intcode_body CODE >56:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-164 intcode_body CODE >57:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-166 intcode_body CODE >58:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-16A intcode_body CODE >59:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-17C intcode_body CODE >60:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-17E intcode_body CODE >61:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-186 intcode_body CODE >62:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
-18A intcode_body CODE >84:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+6E intcodelo CODE >124:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+8 intcode CODE >30:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+8 intcode CODE >124:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+CA intcode_body CODE >30:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+114 intcode_body CODE >45:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+122 intcode_body CODE >46:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+124 intcode_body CODE >47:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+132 intcode_body CODE >48:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+13A intcode_body CODE >49:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+13C intcode_body CODE >50:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+13E intcode_body CODE >51:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+142 intcode_body CODE >52:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+144 intcode_body CODE >53:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+146 intcode_body CODE >54:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+152 intcode_body CODE >55:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+152 intcode_body CODE >57:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+164 intcode_body CODE >58:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+166 intcode_body CODE >59:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+16A intcode_body CODE >60:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+17C intcode_body CODE >61:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+17E intcode_body CODE >62:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+186 intcode_body CODE >63:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
+18A intcode_body CODE >85:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interrupts.c
 3EA text3 CODE >24:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/system.c
 3EA text3 CODE >27:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/system.c
 3F2 text3 CODE >28:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/system.c
@@ -140,13 +140,13 @@ CA intcode_body CODE >29:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interr
 318 text1 CODE >78:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
 330 text1 CODE >79:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
 340 text1 CODE >80:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
-344 text1 CODE >81:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
-348 text1 CODE >82:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
-34A text1 CODE >83:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
-34C text1 CODE >84:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
-358 text1 CODE >85:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
-35C text1 CODE >86:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
-360 text1 CODE >87:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
+344 text1 CODE >82:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
+348 text1 CODE >83:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
+34A text1 CODE >84:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
+34C text1 CODE >85:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
+358 text1 CODE >86:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
+35C text1 CODE >87:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
+360 text1 CODE >88:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/user.c
 1DA text0 CODE >35:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/main.c
 1DA text0 CODE >38:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/main.c
 1DE text0 CODE >41:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/main.c
@@ -176,30 +176,30 @@ CA intcode_body CODE >29:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/interr
 2D6 text0 CODE >44:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/main.c
 2D6 text0 CODE >66:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/main.c
 2DA text0 CODE >68:/Users/alejo/MPLABXProjects/pic18_c_template_1.X/main.c
-3BC cinit CODE >1759:/tmp/xcrEunDih
-3BC cinit CODE >1761:/tmp/xcrEunDih
-3BC cinit CODE >1764:/tmp/xcrEunDih
-3BC cinit CODE >1792:/tmp/xcrEunDih
-3BE cinit CODE >1793:/tmp/xcrEunDih
-3C0 cinit CODE >1794:/tmp/xcrEunDih
-3C2 cinit CODE >1795:/tmp/xcrEunDih
-3C4 cinit CODE >1796:/tmp/xcrEunDih
-3C6 cinit CODE >1797:/tmp/xcrEunDih
-3C8 cinit CODE >1798:/tmp/xcrEunDih
-3CA cinit CODE >1799:/tmp/xcrEunDih
-3CE cinit CODE >1800:/tmp/xcrEunDih
-3D0 cinit CODE >1801:/tmp/xcrEunDih
-3D4 cinit CODE >1805:/tmp/xcrEunDih
-3D6 cinit CODE >1806:/tmp/xcrEunDih
-3D8 cinit CODE >1807:/tmp/xcrEunDih
-3DA cinit CODE >1808:/tmp/xcrEunDih
-3DC cinit CODE >1809:/tmp/xcrEunDih
-3DE cinit CODE >1810:/tmp/xcrEunDih
-3E0 cinit CODE >1816:/tmp/xcrEunDih
-3E0 cinit CODE >1818:/tmp/xcrEunDih
-3E2 cinit CODE >1819:/tmp/xcrEunDih
-3E4 cinit CODE >1820:/tmp/xcrEunDih
-3E6 cinit CODE >1821:/tmp/xcrEunDih
+3BC cinit CODE >1759:/tmp/xcdI8e9k2
+3BC cinit CODE >1761:/tmp/xcdI8e9k2
+3BC cinit CODE >1764:/tmp/xcdI8e9k2
+3BC cinit CODE >1792:/tmp/xcdI8e9k2
+3BE cinit CODE >1793:/tmp/xcdI8e9k2
+3C0 cinit CODE >1794:/tmp/xcdI8e9k2
+3C2 cinit CODE >1795:/tmp/xcdI8e9k2
+3C4 cinit CODE >1796:/tmp/xcdI8e9k2
+3C6 cinit CODE >1797:/tmp/xcdI8e9k2
+3C8 cinit CODE >1798:/tmp/xcdI8e9k2
+3CA cinit CODE >1799:/tmp/xcdI8e9k2
+3CE cinit CODE >1800:/tmp/xcdI8e9k2
+3D0 cinit CODE >1801:/tmp/xcdI8e9k2
+3D4 cinit CODE >1805:/tmp/xcdI8e9k2
+3D6 cinit CODE >1806:/tmp/xcdI8e9k2
+3D8 cinit CODE >1807:/tmp/xcdI8e9k2
+3DA cinit CODE >1808:/tmp/xcdI8e9k2
+3DC cinit CODE >1809:/tmp/xcdI8e9k2
+3DE cinit CODE >1810:/tmp/xcdI8e9k2
+3E0 cinit CODE >1816:/tmp/xcdI8e9k2
+3E0 cinit CODE >1818:/tmp/xcdI8e9k2
+3E2 cinit CODE >1819:/tmp/xcdI8e9k2
+3E4 cinit CODE >1820:/tmp/xcdI8e9k2
+3E6 cinit CODE >1821:/tmp/xcdI8e9k2
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -219,17 +219,17 @@ __Hspace_1 34 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.produc
 __Hspace_2 0 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcSNp3blX.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcC0H9hhx.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 _LATA F89 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 _LATB F8A 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 _TMR2 FCC 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcSNp3blX.obj
+___sp 0 0 STACK 2 stack /tmp/xcC0H9hhx.obj
 _main 1DA 0 CODE 0 text0 dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 btemp 33 0 COMRAM 1 temp dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
-start C6 0 CODE 0 init /tmp/xcSNp3blX.obj
+start C6 0 CODE 0 init /tmp/xcC0H9hhx.obj
 __size_of_main 0 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Hpowerup C6 0 CODE 0 powerup dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
@@ -238,11 +238,11 @@ pwm@cycle 28 0 COMRAM 1 cstackCOMRAM dist/C18_18F87K22/production/pic18_c_templa
 _T0CONbits FD5 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __size_of_low_isr 0 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
-__accesstop 60 0 ABS 0 - /tmp/xcSNp3blX.obj
-intlevel0 0 0 CODE 0 text /tmp/xcSNp3blX.obj
-intlevel1 0 0 CODE 0 text /tmp/xcSNp3blX.obj
-intlevel2 0 0 CODE 0 text /tmp/xcSNp3blX.obj
-intlevel3 0 0 CODE 0 text /tmp/xcSNp3blX.obj
+__accesstop 60 0 ABS 0 - /tmp/xcC0H9hhx.obj
+intlevel0 0 0 CODE 0 text /tmp/xcC0H9hhx.obj
+intlevel1 0 0 CODE 0 text /tmp/xcC0H9hhx.obj
+intlevel2 0 0 CODE 0 text /tmp/xcC0H9hhx.obj
+intlevel3 0 0 CODE 0 text /tmp/xcC0H9hhx.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __CFG_USBDIV$1 0 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 _InitApp 362 0 CODE 0 text2 dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
@@ -257,8 +257,8 @@ __CFG_EBTRB$OFF 0 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.pr
 __Hifardata 0 0 CODE 0 ifardata dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __pidataCOMRAM 3FC 0 CODE 0 idataCOMRAM dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/xcSNp3blX.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/xcSNp3blX.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/xcC0H9hhx.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/xcC0H9hhx.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 _CCPR2L FBB 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
@@ -299,7 +299,7 @@ __Htext2 0 0 ABS 0 text2 dist/C18_18F87K22/production/pic18_c_template_1.X.produ
 __Htext3 0 0 ABS 0 text3 dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcSNp3blX.obj
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcC0H9hhx.obj
 __Hcomram 0 0 ABS 0 comram dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
@@ -376,8 +376,8 @@ __Lfarbss 0 0 FARRAM 0 farbss dist/C18_18F87K22/production/pic18_c_template_1.X.
 __Lfardata 0 0 FARRAM 0 fardata dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 _low_isr 18 0 CODE 0 intcodelo dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 _upDown 31 0 COMRAM 1 dataCOMRAM dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
-stackhi 7FF 0 ABS 0 - /tmp/xcSNp3blX.obj
-stacklo 60 0 ABS 0 - /tmp/xcSNp3blX.obj
+stackhi 7FF 0 ABS 0 - /tmp/xcC0H9hhx.obj
+stacklo 60 0 ABS 0 - /tmp/xcC0H9hhx.obj
 __Lintcode 8 0 CODE 0 intcode dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
@@ -405,7 +405,7 @@ __ptext2 362 0 CODE 0 text2 dist/C18_18F87K22/production/pic18_c_template_1.X.pr
 __ptext3 3EA 0 CODE 0 text3 dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __end_of_InitApp 3BC 0 CODE 0 text2 dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
-__ramtop 800 0 RAM 0 ramtop /tmp/xcSNp3blX.obj
+__ramtop 800 0 RAM 0 ramtop /tmp/xcC0H9hhx.obj
 __Lpowerup C6 0 CODE 0 powerup dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj
 __size_of_ConfigureOscillator 0 0 ABS 0 - dist/C18_18F87K22/production/pic18_c_template_1.X.production.obj

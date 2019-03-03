@@ -3296,9 +3296,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;user.c: 48: CCPR2L = 127;
 "48
 [e = _CCPR2L -> -> 127 `i `uc ]
-[; ;user.c: 49: CCP2CONbits.DC2B=0b11;
+[; ;user.c: 49: CCP2CONbits.DC2B=0b00;
 "49
-[e = . . _CCP2CONbits 0 1 -> -> 3 `i `uc ]
+[e = . . _CCP2CONbits 0 1 -> -> 0 `i `uc ]
 [; ;user.c: 50: CCP2CONbits.CCP2M=0b1100;
 "50
 [e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
@@ -3381,31 +3381,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;user.c: 80: CCPR2L = CCPR2L+1;
 "80
 [e = _CCPR2L -> + -> _CCPR2L `i -> 1 `i `uc ]
-"81
+"82
 }
-[; ;user.c: 81: } else {
+[; ;user.c: 82: } else {
 [e $U 330  ]
 [e :U 329 ]
 {
-[; ;user.c: 82: T0CONbits.TMR0ON=0;
-"82
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-[; ;user.c: 83: INTCON2bits.INTEDG0=1;
+[; ;user.c: 83: T0CONbits.TMR0ON=0;
 "83
-[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
-[; ;user.c: 84: press=1;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+[; ;user.c: 84: INTCON2bits.INTEDG0=1;
 "84
-[e = _press -> 1 `i ]
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;user.c: 85: press=1;
 "85
-}
-[e :U 330 ]
+[e = _press -> 1 `i ]
 "86
 }
-[e :U 328 ]
+[e :U 330 ]
 "87
+}
+[e :U 328 ]
+"88
 [e :U 327 ]
-[; ;user.c: 85: }
 [; ;user.c: 86: }
 [; ;user.c: 87: }
+[; ;user.c: 88: }
 [e :UE 323 ]
 }

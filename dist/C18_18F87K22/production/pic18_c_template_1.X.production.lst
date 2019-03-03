@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.45 build -152302408 
-                                                                                               Wed Feb 27 20:00:13 2019
+                                                                                               Thu Feb 28 11:50:02 2019
 
 Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
      1  0000                     
@@ -1845,7 +1845,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1751                           __CFG_EBTR3$OFF equ 0x0
   1752  0000                     global __CFG_EBTRB$OFF
   1753                           __CFG_EBTRB$OFF equ 0x0
-  1754  0000                     	file	"/tmp/xcrEunDih"
+  1754  0000                     	file	"/tmp/xcdI8e9k2"
   1755                           	line	#
   1756                           psect	cinit,class=CODE,delta=1,reloc=2
   1757                           global __pcinit
@@ -1876,7 +1876,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1782                           	global	_upDown
   1783                           _upDown:
   1784  000031                            ds      2
-  1785  000031                     	file	"/tmp/xcrEunDih"
+  1785  000031                     	file	"/tmp/xcdI8e9k2"
   1786                           	line	#
   1787                           psect	cinit
   1788                           ; Initialize objects allocated to COMRAM (2 bytes)
@@ -2565,35 +2565,35 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2471  000340                     ;user.c: 80: CCPR2L = CCPR2L+1;
   2472                           	incf	((c:4027)),c,w	;volatile
   2473  000340  28BB               	movwf	((c:4027)),c	;volatile
-  2474  000342  6EBB               	line	81
-  2475                           ;user.c: 81: } else {
+  2474  000342  6EBB               	line	82
+  2475                           ;user.c: 82: } else {
   2476                           	goto	l116
   2477  000344  EFB0  F001         	
   2478                           l114:
-  2479  000348                     	line	82
-  2480                           ;user.c: 82: T0CONbits.TMR0ON=0;
+  2479  000348                     	line	83
+  2480                           ;user.c: 83: T0CONbits.TMR0ON=0;
   2481                           	bcf	((c:4053)),c,7	;volatile
-  2482  000348  9ED5               	line	83
-  2483                           ;user.c: 83: INTCON2bits.INTEDG0=1;
+  2482  000348  9ED5               	line	84
+  2483                           ;user.c: 84: INTCON2bits.INTEDG0=1;
   2484                           	bsf	((c:4081)),c,6	;volatile
-  2485  00034A  8CF1               	line	84
+  2485  00034A  8CF1               	line	85
   2486                           	
   2487                           l876:
-  2488  00034C                     ;user.c: 84: press=1;
+  2488  00034C                     ;user.c: 85: press=1;
   2489                           	movlw	high(01h)
   2490  00034C  0E00               	movwf	((c:_press+1)),c
   2491  00034E  6E2E               	movlw	low(01h)
   2492  000350  0E01               	movwf	((c:_press)),c
   2493  000352  6E2D               	goto	l116
-  2494  000354  EFB0  F001         	line	85
+  2494  000354  EFB0  F001         	line	86
   2495                           	
   2496                           l115:
   2497  000358                     	goto	l116
-  2498  000358  EFB0  F001         	line	86
+  2498  000358  EFB0  F001         	line	87
   2499                           	
   2500                           l113:
   2501  00035C                     	goto	l116
-  2502  00035C  EFB0  F001         	line	87
+  2502  00035C  EFB0  F001         	line	88
   2503                           	
   2504                           l112:
   2505  000360                     	
@@ -2728,10 +2728,10 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2634                           	movlw	low(07Fh)
   2635  00039A  0E7F               	movwf	((c:4027)),c	;volatile
   2636  00039C  6EBB               	line	49
-  2637                           ;user.c: 49: CCP2CONbits.DC2B=0b11;
-  2638                           	movlw	(03h & ((1<<2)-1))<<4
-  2639  00039E  0E30               	iorwf	((c:4026)),c	;volatile
-  2640  0003A0  12BA               	line	50
+  2637                           ;user.c: 49: CCP2CONbits.DC2B=0b00;
+  2638                           	movlw	((0 & ((1<<2)-1))<<4)|not (((1<<2)-1)<<4)
+  2639  00039E  0ECF               	andwf	((c:4026)),c	;volatile
+  2640  0003A0  16BA               	line	50
   2641                           ;user.c: 50: CCP2CONbits.CCP2M=0b1100;
   2642                           	movf	((c:4026)),c,w	;volatile
   2643  0003A2  50BA               	andlw	not (((1<<4)-1)<<0)
@@ -2856,7 +2856,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2762                           
   2763 ;; *************** function _low_isr *****************
   2764 ;; Defined at:
-  2765 ;;		line 88 in file "interrupts.c"
+  2765 ;;		line 89 in file "interrupts.c"
   2766 ;; Parameters:    Size  Location     Type
   2767 ;;		None
   2768 ;; Auto vars:     Size  Location     Type
@@ -2888,7 +2888,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2794                           __pintcodelo:
   2795  000018                     psect	intcodelo
   2796                           	file	"interrupts.c"
-  2797                           	line	88
+  2797                           	line	89
   2798                           	global	__size_of_low_isr
   2799                           	__size_of_low_isr	equ	__end_of_low_isr-_low_isr
   2800  0000                     	
@@ -2917,7 +2917,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2823  00005E  C033  F024         	movff	btemp+1+0,??_low_isr+18
   2824  000062  C034  F025         	movff	btemp+2+0,??_low_isr+19
   2825  000066  C035  F026         	movff	btemp+3+0,??_low_isr+20
-  2826  00006A  C036  F027         	line	123
+  2826  00006A  C036  F027         	line	124
   2827                           	
   2828                           i1l31:
   2829  00006E                     	movff	??_low_isr+20,btemp+3+0
@@ -2951,7 +2951,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2857                           
   2858 ;; *************** function _high_isr *****************
   2859 ;; Defined at:
-  2860 ;;		line 29 in file "interrupts.c"
+  2860 ;;		line 30 in file "interrupts.c"
   2861 ;; Parameters:    Size  Location     Type
   2862 ;;		None
   2863 ;; Auto vars:     Size  Location     Type
@@ -2982,7 +2982,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2888                           __pintcode:
   2889  000008                     psect	intcode
   2890                           	file	"interrupts.c"
-  2891                           	line	29
+  2891                           	line	30
   2892                           	global	__size_of_high_isr
   2893                           	__size_of_high_isr	equ	__end_of_high_isr-_high_isr
   2894  0000                     	
@@ -3016,73 +3016,73 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2922  000104  C033  F00F         	movff	btemp+1+0,??_high_isr+15
   2923  000108  C034  F010         	movff	btemp+2+0,??_high_isr+16
   2924  00010C  C035  F011         	movff	btemp+3+0,??_high_isr+17
-  2925  000110  C036  F012         	line	44
+  2925  000110  C036  F012         	line	45
   2926                           	
   2927                           i2l878:
-  2928  000114                     ;interrupts.c: 44: if(INTCONbits.INT0IF) {
+  2928  000114                     ;interrupts.c: 45: if(INTCONbits.INT0IF) {
   2929                           	btfss	((c:4082)),c,1	;volatile
   2930  000114  A2F2               	goto	i2u18_41
   2931  000116  EF8F  F000         	goto	i2u18_40
   2932  00011A  EF91  F000         i2u18_41:
   2933  00011E                     	goto	i2l19
   2934  00011E  EFAB  F000         i2u18_40:
-  2935  000122                     	line	45
+  2935  000122                     	line	46
   2936                           	
   2937                           i2l880:
-  2938  000122                     ;interrupts.c: 45: INTCONbits.INT0IF=0;
+  2938  000122                     ;interrupts.c: 46: INTCONbits.INT0IF=0;
   2939                           	bcf	((c:4082)),c,1	;volatile
-  2940  000122  92F2               	line	46
-  2941                           ;interrupts.c: 46: if(INTCON2bits.INTEDG0==1){
+  2940  000122  92F2               	line	47
+  2941                           ;interrupts.c: 47: if(INTCON2bits.INTEDG0==1){
   2942                           	btfss	((c:4081)),c,6	;volatile
   2943  000124  ACF1               	goto	i2u19_41
   2944  000126  EF97  F000         	goto	i2u19_40
   2945  00012A  EF99  F000         i2u19_41:
   2946  00012E                     	goto	i2l20
   2947  00012E  EFA1  F000         i2u19_40:
-  2948  000132                     	line	47
+  2948  000132                     	line	48
   2949                           	
   2950                           i2l882:
-  2951  000132                     ;interrupts.c: 47: count=0;
+  2951  000132                     ;interrupts.c: 48: count=0;
   2952                           	movlw	high(0)
   2953  000132  0E00               	movwf	((c:_count+1)),c
   2954  000134  6E30               	movlw	low(0)
   2955  000136  0E00               	movwf	((c:_count)),c
-  2956  000138  6E2F               	line	48
+  2956  000138  6E2F               	line	49
   2957                           	
   2958                           i2l884:
-  2959  00013A                     ;interrupts.c: 48: T0CONbits.TMR0ON=1;
+  2959  00013A                     ;interrupts.c: 49: T0CONbits.TMR0ON=1;
   2960                           	bsf	((c:4053)),c,7	;volatile
-  2961  00013A  8ED5               	line	49
+  2961  00013A  8ED5               	line	50
   2962                           	
   2963                           i2l886:
-  2964  00013C                     ;interrupts.c: 49: INTCON2bits.INTEDG0=0;
+  2964  00013C                     ;interrupts.c: 50: INTCON2bits.INTEDG0=0;
   2965                           	bcf	((c:4081)),c,6	;volatile
-  2966  00013C  9CF1               	line	50
-  2967                           ;interrupts.c: 50: } else {
+  2966  00013C  9CF1               	line	51
+  2967                           ;interrupts.c: 51: } else {
   2968                           	goto	i2l26
   2969  00013E  EFC7  F000         	
   2970                           i2l20:
-  2971  000142                     	line	51
-  2972                           ;interrupts.c: 51: T0CONbits.TMR0ON=0;
+  2971  000142                     	line	52
+  2972                           ;interrupts.c: 52: T0CONbits.TMR0ON=0;
   2973                           	bcf	((c:4053)),c,7	;volatile
-  2974  000142  9ED5               	line	52
-  2975                           ;interrupts.c: 52: INTCON2bits.INTEDG0=1;
+  2974  000142  9ED5               	line	53
+  2975                           ;interrupts.c: 53: INTCON2bits.INTEDG0=1;
   2976                           	bsf	((c:4081)),c,6	;volatile
-  2977  000144  8CF1               	line	53
+  2977  000144  8CF1               	line	54
   2978                           	
   2979                           i2l888:
-  2980  000146                     ;interrupts.c: 53: press=1;
+  2980  000146                     ;interrupts.c: 54: press=1;
   2981                           	movlw	high(01h)
   2982  000146  0E00               	movwf	((c:_press+1)),c
   2983  000148  6E2E               	movlw	low(01h)
   2984  00014A  0E01               	movwf	((c:_press)),c
   2985  00014C  6E2D               	goto	i2l26
-  2986  00014E  EFC7  F000         	line	54
+  2986  00014E  EFC7  F000         	line	55
   2987                           	
   2988                           i2l21:
-  2989  000152                     	line	56
-  2990                           ;interrupts.c: 54: }
-  2991                           ;interrupts.c: 56: } else if(INTCONbits.TMR0IF) {
+  2989  000152                     	line	57
+  2990                           ;interrupts.c: 55: }
+  2991                           ;interrupts.c: 57: } else if(INTCONbits.TMR0IF) {
   2992                           	goto	i2l26
   2993  000152  EFC7  F000         	
   2994                           i2l19:
@@ -3092,19 +3092,19 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2998  00015C  EFB2  F000         i2u20_41:
   2999  000160                     	goto	i2l23
   3000  000160  EFB7  F000         i2u20_40:
-  3001  000164                     	line	57
+  3001  000164                     	line	58
   3002                           	
   3003                           i2l890:
-  3004  000164                     ;interrupts.c: 57: INTCONbits.TMR0IF=0;
+  3004  000164                     ;interrupts.c: 58: INTCONbits.TMR0IF=0;
   3005                           	bcf	((c:4082)),c,2	;volatile
-  3006  000164  94F2               	line	58
+  3006  000164  94F2               	line	59
   3007                           	
   3008                           i2l892:
-  3009  000166                     ;interrupts.c: 58: count++;
+  3009  000166                     ;interrupts.c: 59: count++;
   3010                           	infsnz	((c:_count)),c
   3011  000166  4A2F               	incf	((c:_count+1)),c
-  3012  000168  2A30               	line	59
-  3013                           ;interrupts.c: 59: } else if(INTCON3bits.INT1IF) {
+  3012  000168  2A30               	line	60
+  3013                           ;interrupts.c: 60: } else if(INTCON3bits.INT1IF) {
   3014                           	goto	i2l26
   3015  00016A  EFC7  F000         	
   3016                           i2l23:
@@ -3114,23 +3114,23 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3020  000174  EFBE  F000         i2u21_41:
   3021  000178                     	goto	i2l26
   3022  000178  EFC7  F000         i2u21_40:
-  3023  00017C                     	line	60
+  3023  00017C                     	line	61
   3024                           	
   3025                           i2l894:
-  3026  00017C                     ;interrupts.c: 60: INTCON3bits.INT1IF=0;
+  3026  00017C                     ;interrupts.c: 61: INTCON3bits.INT1IF=0;
   3027                           	bcf	((c:4080)),c,0	;volatile
-  3028  00017C  90F0               	line	61
+  3028  00017C  90F0               	line	62
   3029                           	
   3030                           i2l896:
-  3031  00017E                     ;interrupts.c: 61: TMR2=0;
+  3031  00017E                     ;interrupts.c: 62: TMR2=0;
   3032                           	movlw	low(0)
   3033  00017E  0E00               	movwf	((c:4044)),c	;volatile
   3034  000180  6ECC               	goto	i2l26
-  3035  000182  EFC7  F000         	line	62
+  3035  000182  EFC7  F000         	line	63
   3036                           	
   3037                           i2l25:
   3038  000186                     	goto	i2l26
-  3039  000186  EFC7  F000         	line	84
+  3039  000186  EFC7  F000         	line	85
   3040                           	
   3041                           i2l24:
   3042  00018A                     	goto	i2l26
@@ -3397,7 +3397,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.45 build -152302408 
-Symbol Table                                                                                   Wed Feb 27 20:00:13 2019
+Symbol Table                                                                                   Thu Feb 28 11:50:02 2019
 
                            _i 002B                            l60 0290                            l52 01E6  
                           l53 02D2                            l61 0272                            l54 02B6  
