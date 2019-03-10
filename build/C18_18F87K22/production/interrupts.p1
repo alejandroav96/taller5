@@ -1,47 +1,4 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"7405 /Applications/microchip/xc8/v1.45/include/pic18f2550.h
-[s S315 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S315 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"7415
-[s S316 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S316 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"7425
-[s S317 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S317 . . GIEL GIEH ]
-"7404
-[u S314 `S315 1 `S316 1 `S317 1 ]
-[n S314 . . . . ]
-"7431
-[v _INTCONbits `VS314 ~T0 @X0 0 e@4082 ]
-"7328
-[s S311 :7 `uc 1 :1 `uc 1 ]
-[n S311 . . NOT_RBPU ]
-"7332
-[s S312 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S312 . RBIP . TMR0IP . INTEDG2 INTEDG1 INTEDG0 nRBPU ]
-"7342
-[s S313 :2 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
-[n S313 . . T0IP . RBPU ]
-"7327
-[u S310 `S311 1 `S312 1 `S313 1 ]
-[n S310 . . . . ]
-"7349
-[v _INTCON2bits `VS310 ~T0 @X0 0 e@4081 ]
-"20 interrupts.c
-[v _count `i ~T0 @X0 0 e ]
-"6892 /Applications/microchip/xc8/v1.45/include/pic18f2550.h
-[s S302 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S302 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
-"6900
-[s S303 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S303 . T0PS0 T0PS1 T0PS2 ]
-"6891
-[u S301 `S302 1 `S303 1 ]
-[n S301 . . . ]
-"6906
-[v _T0CONbits `VS301 ~T0 @X0 0 e@4053 ]
-"21 interrupts.c
-[v _press `i ~T0 @X0 0 e ]
 "7236 /Applications/microchip/xc8/v1.45/include/pic18f2550.h
 [s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S308 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
@@ -55,6 +12,43 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INTCON3bits `VS307 ~T0 @X0 0 e@4080 ]
 "6225
 [v _TMR2 `Vuc ~T0 @X0 0 e@4044 ]
+"7405
+[s S315 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S315 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7415
+[s S316 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S316 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7425
+[s S317 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S317 . . GIEL GIEH ]
+"7404
+[u S314 `S315 1 `S316 1 `S317 1 ]
+[n S314 . . . . ]
+"7431
+[v _INTCONbits `VS314 ~T0 @X0 0 e@4082 ]
+"23 interrupts.c
+[v _timer `i ~T0 @X0 0 e ]
+"25
+[v _count `i ~T0 @X0 0 e ]
+"3545 /Applications/microchip/xc8/v1.45/include/pic18f2550.h
+[s S138 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S138 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"3554
+[s S139 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S139 . . TX1IF RC1IF ]
+"3544
+[u S137 `S138 1 `S139 1 ]
+[n S137 . . . ]
+"3560
+[v _PIR1bits `VS137 ~T0 @X0 0 e@3998 ]
+"21 interrupts.c
+[v _Buffer `uc ~T0 @X0 -> 0 `x e ]
+"4459 /Applications/microchip/xc8/v1.45/include/pic18f2550.h
+[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
+"22 interrupts.c
+[v _limit `i ~T0 @X0 0 e ]
+"20
+[v _read `i ~T0 @X0 0 e ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -3189,105 +3183,122 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;interrupts.c: 20: extern int count;
-[; ;interrupts.c: 21: extern int press;
-[; ;interrupts.c: 22: void interrupt high_isr(void);
+[; ;interrupts.c: 20: extern int read;
+[; ;interrupts.c: 21: extern char Buffer[20];
+[; ;interrupts.c: 22: extern int limit;
+[; ;interrupts.c: 23: extern int timer;
+"24 interrupts.c
+[v _i `i ~T0 @X0 1 e ]
+[i _i
+-> 0 `i
+]
+[; ;interrupts.c: 24: int i=0;
+[; ;interrupts.c: 25: extern int count;
+[; ;interrupts.c: 26: void interrupt high_isr(void);
 [v $root$_high_isr `(v ~T0 @X0 0 e ]
-[v F3356 `(v ~T0 @X0 1 tf ]
-"30 interrupts.c
-[v _high_isr `IF3356 ~T0 @X0 1 e ]
-"39
+[v F3360 `(v ~T0 @X0 1 tf ]
+"34
+[v _high_isr `IF3360 ~T0 @X0 1 e ]
+"43
 {
-[; ;interrupts.c: 30: void interrupt high_isr(void)
-[; ;interrupts.c: 39: {
+[; ;interrupts.c: 34: void interrupt high_isr(void)
+[; ;interrupts.c: 43: {
 [e :U _high_isr ]
 [f ]
-[; ;interrupts.c: 45: if(INTCONbits.INT0IF) {
-"45
-[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 323  ]
-{
-[; ;interrupts.c: 46: INTCONbits.INT0IF=0;
-"46
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;interrupts.c: 47: if(INTCON2bits.INTEDG0==1){
-"47
-[e $ ! == -> . . _INTCON2bits 1 6 `i -> 1 `i 324  ]
-{
-[; ;interrupts.c: 48: count=0;
-"48
-[e = _count -> 0 `i ]
-[; ;interrupts.c: 49: T0CONbits.TMR0ON=1;
-"49
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;interrupts.c: 50: INTCON2bits.INTEDG0=0;
+[; ;interrupts.c: 50: if(INTCON3bits.INT1IF) {
 "50
-[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
+[e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 323  ]
+{
+[; ;interrupts.c: 51: TMR2=0;
 "51
-}
-[; ;interrupts.c: 51: } else {
-[e $U 325  ]
-[e :U 324 ]
-{
-[; ;interrupts.c: 52: T0CONbits.TMR0ON=0;
+[e = _TMR2 -> -> 0 `i `uc ]
+[; ;interrupts.c: 52: INTCON3bits.INT1IF=0;
 "52
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-[; ;interrupts.c: 53: INTCON2bits.INTEDG0=1;
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
 "53
-[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
-[; ;interrupts.c: 54: press=1;
-"54
-[e = _press -> 1 `i ]
-"55
 }
-[e :U 325 ]
-"57
-}
-[; ;interrupts.c: 55: }
-[; ;interrupts.c: 57: } else if(INTCONbits.TMR0IF) {
-[e $U 326  ]
+[; ;interrupts.c: 53: } else if(INTCONbits.TMR0IF) {
+[e $U 324  ]
 [e :U 323 ]
-[e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 327  ]
+[e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 325  ]
 {
-[; ;interrupts.c: 58: INTCONbits.TMR0IF=0;
-"58
+[; ;interrupts.c: 54: timer=1;
+"54
+[e = _timer -> 1 `i ]
+[; ;interrupts.c: 55: INTCONbits.TMR0IF=0;
+"55
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;interrupts.c: 59: count++;
-"59
-[e ++ _count -> 1 `i ]
-"60
+"56
 }
-[; ;interrupts.c: 60: } else if(INTCON3bits.INT1IF) {
+[; ;interrupts.c: 56: } else if(INTCONbits.INT0IF) {
+[e $U 326  ]
+[e :U 325 ]
+[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 327  ]
+{
+[; ;interrupts.c: 57: count++;
+"57
+[e ++ _count -> 1 `i ]
+[; ;interrupts.c: 58: INTCONbits.INT0IF=0;
+"58
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"59
+}
+[; ;interrupts.c: 59: } else if(PIR1bits.RCIF){
 [e $U 328  ]
 [e :U 327 ]
-[e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 329  ]
+[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 329  ]
 {
-[; ;interrupts.c: 61: INTCON3bits.INT1IF=0;
+[; ;interrupts.c: 60: Buffer[i]=RCREG;
+"60
+[e = *U + &U _Buffer * -> -> _i `ui `ux -> -> # *U &U _Buffer `ui `ux _RCREG ]
+[; ;interrupts.c: 61: if (Buffer[i]=='a'){
 "61
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-[; ;interrupts.c: 62: TMR2=0;
+[e $ ! == -> *U + &U _Buffer * -> -> _i `ui `ux -> -> # *U &U _Buffer `ui `ux `ui -> 97 `ui 330  ]
+{
+[; ;interrupts.c: 62: limit=i;
 "62
-[e = _TMR2 -> -> 0 `i `uc ]
+[e = _limit _i ]
+[; ;interrupts.c: 63: i=0;
 "63
+[e = _i -> 0 `i ]
+[; ;interrupts.c: 64: read=1;
+"64
+[e = _read -> 1 `i ]
+"65
+}
+[; ;interrupts.c: 65: } else {
+[e $U 331  ]
+[e :U 330 ]
+{
+[; ;interrupts.c: 66: i++;
+"66
+[e ++ _i -> 1 `i ]
+"67
+}
+[e :U 331 ]
+"68
 }
 [e :U 329 ]
-"85
+"90
 [e :U 328 ]
 [e :U 326 ]
-[; ;interrupts.c: 63: }
-[; ;interrupts.c: 85: }
+[e :U 324 ]
+[; ;interrupts.c: 67: }
+[; ;interrupts.c: 68: }
+[; ;interrupts.c: 90: }
 [e :UE 322 ]
 }
 [v $root$_low_isr `(v ~T0 @X0 0 e ]
-[v F3361 `(v ~T0 @X0 1 tf ]
-"89
-[v _low_isr `ILF3361 ~T0 @X0 1 e ]
-"97
+[v F3365 `(v ~T0 @X0 1 tf ]
+"94
+[v _low_isr `ILF3365 ~T0 @X0 1 e ]
+"102
 {
-[; ;interrupts.c: 89: void low_priority interrupt low_isr(void)
-[; ;interrupts.c: 97: {
+[; ;interrupts.c: 94: void low_priority interrupt low_isr(void)
+[; ;interrupts.c: 102: {
 [e :U _low_isr ]
 [f ]
-[; ;interrupts.c: 124: }
-"124
-[e :UE 330 ]
+[; ;interrupts.c: 129: }
+"129
+[e :UE 332 ]
 }
